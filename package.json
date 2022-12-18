@@ -1,18 +1,18 @@
 {
-  "name": "web-component-designer-demo",
+  "name": "node-projects/gauge.webcomponent",
   "version": "0.0.0",
   "description": "",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/node-projects/web-component-designer-demo.git"
+    "url": "git+https://github.com/node-projects/gauge.webcomponent.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/node-projects/web-component-designer-demo/issues"
+    "url": "https://github.com/node-projects/gauge.webcomponent/issues"
   },
-  "homepage": "https://github.com/node-projects/web-component-designer-demo#readme",
+  "homepage": "https://github.com/node-projects/gauge.webcomponent#readme",
   "scripts": {
     "tsc": "tsc",
     "start": "web-dev-server --node-resolve --open sample/index.html",
