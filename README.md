@@ -11,8 +11,12 @@ node-projects-css-gauge -> a port of https://github.com/rotvalli/css-gauge
 node-projects-canvas-gauges -> a port of https://github.com/Mikhus/canvas-gauges (wip)
 node-projects-double-gauge  -> a port of https://github.com/boonzaai/doublegauge
 
+# use:
 
-look:
+you could import every single component explictly, or all at once.
+
+# todo look if we also integrate:
+(maybe some only as a wraper (if they are still maintained))
 https://github.com/sathomas/material-gauge
 https://github.com/naikus/svg-gauge ??
 https://github.com/JohnrBell/Gauge_CSS
