@@ -19,6 +19,7 @@
     "build": "tsc",
     "release": "release-it"
   },
+  "customElements": "custom-elements.json",
   "devDependencies": {
     "typescript": "^4.9.4",
     "es-module-shims": "^1.6.2",
