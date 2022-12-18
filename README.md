@@ -1,8 +1,13 @@
 # gauge.webcomponent
 
 # description
+
 port of a few gauge components to webcomponents and typescript.
 so that they would be usable in web-component-designer: https://node-projects.github.io/web-component-designer-demo/index.html
+
+# sample in web-component-designer
+
+[Sample in Designer](https://node-projects.github.io/web-component-designer-demo/index.html?loadAllImports&npm=@node-projects/gauge.webcomponent&html=%3Cnode-projects-double-gauge%20left-value=%2237%22%20right-value=%2264%22%20style=%22width:200px;height:200px;position:absolute;left:107px;top:55px;%22%3E%3C/node-projects-double-gauge%3E%20%3Cnode-projects-css-gauge%20value=%2227%22%20display-value=%2226%22%20style=%22width:200px;height:200px;position:absolute;left:394px;top:67px;%22%3E%3C/node-projects-css-gauge%3E)
 
 # included components
 
