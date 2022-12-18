@@ -8,8 +8,6 @@ export class CssGaugeComponent extends BaseCustomWebComponentConstructorAppend {
             background: var(--gauge-bg);
             border: 0.05em solid #222222;
             border-radius: 50%;
-            min-width: 300px;
-            min-height: 300px;
             font-weight: bold;
             font-size: 34px;
         }
