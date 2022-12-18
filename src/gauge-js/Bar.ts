@@ -25,10 +25,11 @@ export class Bar {
 			this.maxValue = this.avgValue * 2;
 		}
 
-		const valPercent = (this.value / this.maxValue) * 100;
-		const avgPercent = (this.avgValue / this.maxValue) * 100;
+		//const valPercent = (this.value / this.maxValue) * 100;
+		//const avgPercent = (this.avgValue / this.maxValue) * 100;
 
-		$(".bar-value", this.elem).css( { "width": valPercent + "%" } );
-		return $(".typical-value", this.elem).css( { "width": avgPercent + "%" } );
+//todo - no jequery
+		//$(".bar-value", this.elem).css( { "width": valPercent + "%" } );
+		//return $(".typical-value", this.elem).css( { "width": avgPercent + "%" } );
 	}
 }

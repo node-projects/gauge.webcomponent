@@ -15,6 +15,7 @@ export abstract class BaseGauge extends ValueUpdater {
         return this.textField = textField instanceof TextRenderer ? textField : new TextRenderer(textField, fractionDigits);
     }
 
+    //@ts-ignore
     setMinValue(minValue: any, updateStartValue?: boolean) {
         this.minValue = minValue;
         if (updateStartValue == null) { updateStartValue = true; }
@@ -54,7 +55,9 @@ export abstract class BaseGauge extends ValueUpdater {
         }
 
         if (this.displayScale !== prevDisplayScale) {
+            //@ts-ignore
             const width = this.canvas.G__width || this.canvas.width;
+            //@ts-ignore
             const height = this.canvas.G__height || this.canvas.height;
             if (this.displayScale != null) {
                 this.canvas.width = width * this.displayScale;
@@ -62,7 +65,9 @@ export abstract class BaseGauge extends ValueUpdater {
             }
             this.canvas.style.width = `${width}px`;
             this.canvas.style.height = `${height}px`;
+            //@ts-ignore
             this.canvas.G__width = width;
+            //@ts-ignore
             this.canvas.G__height = height;
         }
 

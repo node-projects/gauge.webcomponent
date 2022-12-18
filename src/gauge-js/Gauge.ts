@@ -75,6 +75,7 @@ export class Gauge extends BaseGauge {
 		return this;
 	}
 
+	//@ts-ignore
 	configPercentColors() {
 		this.percentColors = null;
 		if (this.options.percentColors !== undefined) {
@@ -120,6 +121,7 @@ export class Gauge extends BaseGauge {
 		// get max value and update pointer(s)
 		i = 0;
 
+		//@ts-ignore
 		for (let val of Array.from(value)) {
 			// Limit pointer within min and max?
 			if (val > this.maxValue) {
@@ -208,17 +210,21 @@ export class Gauge extends BaseGauge {
 		this.ctx.textAlign = "center";
 		for (let value of Array.from(staticLabels.labels)) {
 			var rotationAngle: number;
+			//@ts-ignore
 			if (value.label !== undefined) {
 				// Draw labels depending on limitMin/Max
 				if ((!this.options.limitMin || (value >= this.minValue)) && (!this.options.limitMax || (value <= this.maxValue))) {
+					//@ts-ignore
 					font = value.font || staticLabels.font;
 					match = font.match(re)[0];
 					rest = font.slice(match.length);
 					fontsize = parseFloat(match) * this.displayScale;
 					this.ctx.font = fontsize + rest;
 									
+					//@ts-ignore
 					rotationAngle = this.getAngle(value.label) - ((3 * Math.PI) / 2);
 					this.ctx.rotate(rotationAngle);
+					//@ts-ignore
 					this.ctx.fillText(formatNumber(value.label, staticLabels.fractionDigits), 0, -radius - (this.lineWidth / 2));
 					this.ctx.rotate(-rotationAngle);
 				}
@@ -226,6 +232,7 @@ export class Gauge extends BaseGauge {
 			} else {
 				// Draw labels depending on limitMin/Max
 				if ((!this.options.limitMin || (value >= this.minValue)) && (!this.options.limitMax || (value <= this.maxValue))) {
+					//@ts-ignore
 					rotationAngle = this.getAngle(value) - ((3 * Math.PI) / 2);
 					this.ctx.rotate(rotationAngle);
 					this.ctx.fillText(formatNumber(value, staticLabels.fractionDigits), 0, -radius - (this.lineWidth / 2));
@@ -237,7 +244,9 @@ export class Gauge extends BaseGauge {
 		return this.ctx.restore();
 	}
 
+	//@ts-ignore
 	renderTicks(ticksOptions: { divisions?: any; subDivisions?: any; divColor?: any; subColor?: any; divLength?: any; subLength?: any; divWidth?: any; subWidth?: any; }, w: number, h: number, radius: number) {
+		//@ts-ignore
 		if (ticksOptions !== {}) {
 			const divisionCount = ticksOptions.divisions || 0;
 			const subdivisionCount = ticksOptions.subDivisions || 0;
@@ -245,9 +254,13 @@ export class Gauge extends BaseGauge {
 			const subColor = ticksOptions.subColor || '#fff';
 			const divLength = ticksOptions.divLength || 0.7; // default
 			const subLength = ticksOptions.subLength || 0.2; // default
+			//@ts-ignore
 			const range = parseFloat(this.maxValue) - parseFloat(this.minValue); // total value range
+			//@ts-ignore
 			const rangeDivisions = parseFloat(range) / parseFloat(ticksOptions.divisions); // get division step
+			//@ts-ignore
 			const subDivisions = parseFloat(rangeDivisions) / parseFloat(ticksOptions.subDivisions);
+			//@ts-ignore
 			let currentDivision = parseFloat(this.minValue);
 			let currentSubDivision = 0.0 + subDivisions;
 			const lineWidth = range / 400; // base
@@ -306,35 +319,45 @@ export class Gauge extends BaseGauge {
 
 		this.ctx.lineCap = "butt";
 		const radius = this.radius * this.options.radiusScale;
+		//@ts-ignore
 		if (this.options.staticLabels) {
+			//@ts-ignore
 			this.renderStaticLabels(this.options.staticLabels, w, h, radius);
 		}
 		
+		//@ts-ignore
 		if (this.options.staticZones) {
 			this.ctx.save();
 			this.ctx.translate(w, h);
 			this.ctx.lineWidth = this.lineWidth;
+			//@ts-ignore
 			for (let zone of Array.from(this.options.staticZones)) {
 				// Draw zones depending on limitMin/Max
 				let {
+					//@ts-ignore
                     min
                 } = zone;
 				if (this.options.limitMin && (min < this.minValue)) {
 					min = this.minValue;
 				}
 				let {
+					//@ts-ignore
                     max
                 } = zone;
 				if (this.options.limitMax && (max > this.maxValue)) {
 					max = this.maxValue;
 				}
 				let tmpRadius = (this.radius * this.options.radiusScale);
+				//@ts-ignore
 				if (zone.height) {
+					//@ts-ignore
 					this.ctx.lineWidth = this.lineWidth * zone.height;
+					//@ts-ignore
 					const scaleMutate = (this.lineWidth / 2) * (zone.offset || (1 - zone.height));
 					tmpRadius = (this.radius * this.options.radiusScale) + scaleMutate;
 				}
 				
+				//@ts-ignore
 				this.ctx.strokeStyle = zone.strokeStyle;
 				this.ctx.beginPath();
 				this.ctx.arc(0, 0, tmpRadius, this.getAngle(min), this.getAngle(max), false);
@@ -343,9 +366,12 @@ export class Gauge extends BaseGauge {
 
 		} else {
 			let fillStyle: string;
+			//@ts-ignore
 			if (this.options.customFillStyle !== undefined) {
+				//@ts-ignore
 				fillStyle = this.options.customFillStyle(this);
 			} else if (this.percentColors !== null) {
+				//@ts-ignore
 				fillStyle = this.getColorForValue(this.displayedValue, this.options.generateGradient);
 			} else if (this.options.colorStop !== undefined) {
 				if (this.options.gradientType === 0) {
@@ -353,7 +379,9 @@ export class Gauge extends BaseGauge {
 				} else {
 					fillStyle = this.ctx.createLinearGradient(0, 0, w, 0);
 				}
+				//@ts-ignore
 				fillStyle.addColorStop(0, this.options.colorStart);
+				//@ts-ignore
 				fillStyle.addColorStop(1, this.options.colorStop);
 			} else {
 				fillStyle = this.options.colorStart;
@@ -372,8 +400,8 @@ export class Gauge extends BaseGauge {
 			this.ctx.save();
 			this.ctx.translate(w, h);
 		}
-		
-		if (this.options.renderTicks) {
+		//@ts-ignore
+		if (this.options.renderTicks) {//@ts-ignore
 			this.renderTicks(this.options.renderTicks, w, h, radius);
 		}
 

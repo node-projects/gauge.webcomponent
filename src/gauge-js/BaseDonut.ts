@@ -73,7 +73,9 @@ export class BaseDonut extends BaseGauge {
         grdFill.addColorStop(0, this.options.colorStart);
         grdFill.addColorStop(1, this.options.colorStop);
 
+        //@ts-ignore
         const start = this.radius - (this.lineWidth / 2);
+        //@ts-ignore
         const stop = this.radius + (this.lineWidth / 2);
 
         this.ctx.strokeStyle = this.options.strokeColor;

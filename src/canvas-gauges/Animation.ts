@@ -57,6 +57,7 @@ let rules = {
     cycle: p => 1 - Math.sin(Math.acos(p)),
     decycle: p => Math.sin(Math.acos(1 - p)),
     bounce: p => 1 - rules.debounce(1 - p),
+    //@ts-ignore
     debounce: p => {
         let a = 0, b = 1;
         for (; 1; a += b, b /= 2) {
@@ -181,6 +182,7 @@ export default class Animation {
          *
          * @type {number}
          */
+        //@ts-ignore
         this.duration = duration;
 
         /**
@@ -191,6 +193,7 @@ export default class Animation {
          *
          * @type {string|AnimationRule}
          */
+        //@ts-ignore
         this.rule = rule;
 
         /**
@@ -198,6 +201,7 @@ export default class Animation {
          *
          * @type {DrawEventCallback}
          */
+        //@ts-ignore
         this.draw = draw;
 
         /**
@@ -205,13 +209,18 @@ export default class Animation {
          *
          * @type {EndEventCallback}
          */
+        //@ts-ignore
         this.end = end;
 
+        //@ts-ignore
         if (typeof this.draw !== 'function') {
+            //@ts-ignore
             throw new TypeError('Invalid animation draw callback:', draw);
         }
 
+        //@ts-ignore
         if (typeof this.end !== 'function') {
+            //@ts-ignore
             throw new TypeError('Invalid animation end callback:', end);
         }
     }
@@ -252,17 +261,23 @@ export default class Animation {
      * @param {EndEventCallback} [end]
      */
     animate(draw, end) {
+        //@ts-ignore
         this.frame && this.cancel();
 
         // noinspection JSUnresolvedVariable
         const start = window.performance && window.performance.now ?
                 window.performance.now() :
+                //@ts-ignore
                 (vendorize('animationStartTime') || Date.now());
 
+                //@ts-ignore
         draw = draw || this.draw;
+        //@ts-ignore
         end = end || this.end;
 
+        //@ts-ignore
         this.draw = draw;
+        //@ts-ignore
         this.end = end;
 
         /**
@@ -270,8 +285,11 @@ export default class Animation {
          *
          * @type {number}
          */
+        //@ts-ignore
         this.frame = requestAnimationFrame(time =>
+            //@ts-ignore
             step(time, draw, start, rules[this.rule] || this.rule,
+                //@ts-ignore
                 this.duration, end, this));
     }
 
@@ -279,12 +297,16 @@ export default class Animation {
      * Cancels current animation if any
      */
     cancel() {
+        //@ts-ignore
         if (this.frame) {
+            //@ts-ignore
             const cancelAnimationFrame = vendorize('cancelAnimationFrame') ||
                 /* istanbul ignore next */
                 ((id) => {});
 
+                //@ts-ignore
             cancelAnimationFrame(this.frame);
+            //@ts-ignore
             this.frame = null;
         }
     }
@@ -294,7 +316,9 @@ export default class Animation {
      */
     destroy() {
         this.cancel();
+        //@ts-ignore
         this.draw = null;
+        //@ts-ignore
         this.end = null;
     }
 }
@@ -305,6 +329,7 @@ export default class Animation {
  * @type {AnimationRules}
  * @static
  */
+//@ts-ignore
 Animation.rules = rules;
 
 module.exports = Animation;

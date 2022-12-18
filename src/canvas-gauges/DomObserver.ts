@@ -32,6 +32,7 @@
  * @constructor
  */
 export default function Collection () {
+    //@ts-ignore
     Array.prototype.constructor.apply(this, arguments);
 }
 

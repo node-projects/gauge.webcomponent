@@ -31,7 +31,9 @@ const EventEmitter = require('./EventEmitter');
 
 const version = '%VERSION%';
 
+//@ts-ignore
 const round = Math.round;
+//@ts-ignore
 const abs = Math.abs;
 
 let gauges = new Collection();
@@ -150,6 +152,7 @@ export default class BaseGauge extends EventEmitter {
          *
          * @type {BaseGauge} type
          */
+        //@ts-ignore
         this.type = ns[className] || BaseGauge;
 
         /**
@@ -187,8 +190,10 @@ export default class BaseGauge extends EventEmitter {
 
         if (!options.width || !options.height) {
             if (!options.width) options.width = canvas.parentNode ?
+            //@ts-ignore
                 canvas.parentNode.offsetWidth : canvas.offsetWidth;
             if (!options.height) options.height = canvas.parentNode ?
+            //@ts-ignore
                 canvas.parentNode.offsetHeight : canvas.offsetHeight;
         }
 
@@ -431,6 +436,7 @@ export default class BaseGauge extends EventEmitter {
         value = parseFloat(value);
 
         if (isNaN(value) || !isFinite(value)) {
+            //@ts-ignore
             value = parseFloat(min) || 0;
         }
 
@@ -454,8 +460,11 @@ export default class BaseGauge extends EventEmitter {
  * @typedef {object} ns
  */
 /* istanbul ignore if */
+//@ts-ignore
 if (typeof ns !== 'undefined') {
+    //@ts-ignore
     ns['BaseGauge'] = BaseGauge;
+    //@ts-ignore
     ns['gauges'] = (window.document || {})['gauges'] = gauges;
 }
 

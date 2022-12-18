@@ -1,19 +1,11 @@
-export const secondsToString = function(sec: string | number) {
+export const secondsToString = function(sec: number) {
 	let hr = Math.floor(sec / 3600);
 	let min = Math.floor((sec - (hr * 3600)) / 60);
 	sec -= ((hr * 3600) + (min * 60));
-	sec += '';
-	min += '';
-	while (min.length < 2) {
-		min = '0' + min;
-	}
-	while (sec.length < 2) {
-		sec = '0' + sec;
-	}
-	hr = hr ? hr + ':' : '';
-	return hr + min + ':' + sec;
+	return ( hr ? hr + ':' : '') + min.toString().padStart(2, '0') + ':' + sec.toString().padStart(2, '0');
 };
 
+//@ts-ignore
 export const formatNumber = function(...num: {}) {
 	const value = num[0];
 	const digits = 0 || num[1];

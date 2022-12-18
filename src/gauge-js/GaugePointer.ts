@@ -28,6 +28,7 @@ export class GaugePointer extends ValueUpdater {
 		this.setOptions();
 	}
 
+	//@ts-ignore
 	setOptions(options?: Options) {
 		this.options = { ...this.options, ...options };
 		this.length = 2 * this.gauge.radius * this.gauge.options.radiusScale * this.options.length;

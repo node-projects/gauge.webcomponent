@@ -86,35 +86,6 @@ export class DoubleGaugeComponent extends BaseCustomWebComponentConstructorAppen
         this._needle2.setAttribute("transform", "rotate(" + rotation + ",100,100)");
         this._aggregated.innerHTML = "OEE " + Math.round(this._leftValue * this._rightValue / 100) + " %";
     }
-
-    //remove demo code from component
-    /*animateRandom(delay) {
-        if (delay != null)
-            this.animationDelay = delay;
-
-        let up = Math.random() > 0.5;
-        let step = Math.random() * 10;
-        if (up) {
-            this.leftValue += step;
-        } else {
-            this.leftValue -= step;
-        }
-        if (this.leftValue > 100 || this.leftValue < 0)
-            this.leftValue = 50;
-        this.setValues(this.leftValue, null);
-
-        up = Math.random() > 0.5;
-        step = Math.random() * 10;
-        if (up) {
-            this.rightValue += step;
-        } else {
-            this.rightValue -= step;
-        }
-        if (this.rightValue > 100 || this.rightValue < 0)
-            this.rightValue = 50;
-        this.setValues(null, this.rightValue);
-        setTimeout(this.animateRandom, this.animationDelay);
-    }*/
 }
 
 customElements.define(DoubleGaugeComponent.is, DoubleGaugeComponent);

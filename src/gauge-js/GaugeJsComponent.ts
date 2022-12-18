@@ -25,19 +25,7 @@ export class GaugeComponent extends BaseCustomWebComponentConstructorAppend {
     ready() {
         this._parseAttributesToProperties();
 
-        let opts = {
-            angle: 0.15, /// The span of the gauge arc
-            lineWidth: 0.44, // The line thickness
-            pointer: {
-                length: 0.9, // Relative to gauge radius
-                strokeWidth: 0.035 // The thickness
-            },
-            colorStart: '#6FADCF',   // Colors
-            colorStop: '#8FC0DA',    // just experiment with them
-            strokeColor: '#E0E0E0'   // to see which ones work best for you
-        };
-
-        opts = {
+       let opts = {
             angle: -0.25,
             lineWidth: 0.2,
             radiusScale:0.9,
@@ -65,12 +53,6 @@ export class GaugeComponent extends BaseCustomWebComponentConstructorAppend {
         this._gauge = new Gauge(this._canvas).setOptions(opts); // create sexy gauge!
         this._gauge.maxValue = 3000; // set max gauge value
         this._gauge.setMinValue(0);  // set min value
-
-        let i = 850;
-        setInterval(() => {
-            i += 10;
-            this._gauge.set(i);
-        }, 200);
     }
 }
 
