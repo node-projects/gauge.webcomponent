@@ -16,7 +16,8 @@
   "scripts": {
     "tsc": "tsc",
     "start": "web-dev-server --node-resolve --open sample/index.html",
-    "build": "tsc"
+    "build": "tsc",
+    "release": "release-it"
   },
   "devDependencies": {
     "typescript": "^4.9.4",
