@@ -1,0 +1,57 @@
+{
+    "schemaVersion": "1.0.0",
+    "readme": "README.md",
+    "modules": [
+        {
+            "kind": "javascript-module",
+            "path": "dist/tab/DoubleGaugeComponent.js",
+            "declarations": [
+                {
+                    "kind": "class",
+                    "name": "DoubleGaugeComponent",
+                    "members": [
+                        {
+                            "kind": "field",
+                            "name": "leftValue",
+                            "type":  {
+                                "text": "number"
+                            }
+                        },
+                        {
+                            "kind": "field",
+                            "name": "rightValue",
+                            "type":  {
+                                "text": "number"
+                            }
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "left-value",
+                            "fieldName": "leftValue"
+                        },
+                        {
+                            "name": "right-value",
+                            "fieldName": "rightValue"
+                        }
+                    ],
+                    "superclass": {
+                        "name": "BaseCustomWebComponentConstructorAppend"
+                    },
+                    "tagName": "node-projects-double-gauge",
+                    "customElement": true
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "custom-element-definition",
+                    "name": "node-projects-double-gauge",
+                    "declaration": {
+                        "name": "DoubleGaugeComponent",
+                        "module": "dist/double-gauge/DoubleGaugeComponent.js"
+                    }
+                }
+            ]
+        }
+    ]
+}
