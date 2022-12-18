@@ -1,7 +1,8 @@
 # gauge.webcomponent
 
 # description
-port of a few gauge components to webcomponents and typescript
+port of a few gauge components to webcomponents and typescript.
+so that they would be usable in web-component-designer: https://node-projects.github.io/web-component-designer-demo/index.html
 
 # included components
 
