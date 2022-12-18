@@ -7,3 +7,12 @@ so that they would be usable in web-component-designer: https://node-projects.gi
 # included components
 
 node-projects-gauge-js -> a port of https://github.com/bernii/gauge.js to typescript and a webcomponent
+node-projects-css-gauge -> a port of https://github.com/rotvalli/css-gauge
+node-projects-canvas-gauges -> a port of https://github.com/Mikhus/canvas-gauges (wip)
+node-projects-double-gauge  -> a port of https://github.com/boonzaai/doublegauge
+
+
+look:
+https://github.com/sathomas/material-gauge
+https://github.com/naikus/svg-gauge ??
+https://github.com/JohnrBell/Gauge_CSS
