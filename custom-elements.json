@@ -4,7 +4,7 @@
     "modules": [
         {
             "kind": "javascript-module",
-            "path": "dist/tab/DoubleGaugeComponent.js",
+            "path": "dist/double-gauge/DoubleGaugeComponent.js",
             "declarations": [
                 {
                     "kind": "class",
@@ -55,7 +55,7 @@
         },
         {
             "kind": "javascript-module",
-            "path": "dist/tab/CssGaugeComponent.js",
+            "path": "dist/css-gauge/CssGaugeComponent.js",
             "declarations": [
                 {
                     "kind": "class",
@@ -99,7 +99,7 @@
                     "name": "node-projects-css-gauge",
                     "declaration": {
                         "name": "CssGaugeComponent",
-                        "module": "dist/double-gauge/CssGaugeComponent.js"
+                        "module": "dist/css-gauge/CssGaugeComponent.js"
                     }
                 }
             ]
