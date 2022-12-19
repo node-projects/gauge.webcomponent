@@ -103,6 +103,46 @@
                     }
                 }
             ]
+        },
+        {
+            "kind": "javascript-module",
+            "path": "dist/material-gauge/MaterialGaugeComponent.js",
+            "declarations": [
+                {
+                    "kind": "class",
+                    "name": "MaterialGaugeComponent",
+                    "members": [
+                        {
+                            "kind": "field",
+                            "name": "value",
+                            "type":  {
+                                "text": "number"
+                            }
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "value",
+                            "fieldName": "value"
+                        }
+                    ],
+                    "superclass": {
+                        "name": "BaseCustomWebComponentConstructorAppend"
+                    },
+                    "tagName": "node-projects-material-gauge",
+                    "customElement": true
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "custom-element-definition",
+                    "name": "node-projects-material-gauge",
+                    "declaration": {
+                        "name": "MaterialGaugeComponent",
+                        "module": "dist/material-gauge/MaterialGaugeComponent.js"
+                    }
+                }
+            ]
         }
     ]
 }

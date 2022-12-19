@@ -13,6 +13,7 @@ so that they would be usable in web-component-designer: https://node-projects.gi
 
 - node-projects-double-gauge  -> a port of https://github.com/boonzaai/doublegauge
 - node-projects-css-gauge -> a port of https://github.com/rotvalli/css-gauge
+- node-projects-material-gauge -> a port of https://github.com/sathomas/material-gauge
 - node-projects-gauge-js -> (WIP) a port of https://github.com/bernii/gauge.js to typescript and a webcomponent
 - node-projects-canvas-gauges -> (WIP) a port of https://github.com/Mikhus/canvas-gauges
 
@@ -22,6 +23,6 @@ you could import every single component explictly, or all at once.
 
 # todo look if we also integrate:
 (maybe some only as a wraper (if they are still maintained))
-- https://github.com/sathomas/material-gauge
+
 - https://github.com/naikus/svg-gauge ??
 - https://github.com/JohnrBell/Gauge_CSS
