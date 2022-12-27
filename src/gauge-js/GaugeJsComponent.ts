@@ -57,3 +57,8 @@ export class GaugeComponent extends BaseCustomWebComponentConstructorAppend {
 }
 
 customElements.define(GaugeComponent.is, GaugeComponent);
+declare global {
+  interface HTMLElementTagNameMap {
+      'node-projects-gauge-js': GaugeComponent;
+  }
+}

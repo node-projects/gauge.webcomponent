@@ -256,3 +256,8 @@ export class CssGaugeComponent extends BaseCustomWebComponentConstructorAppend {
 }
 
 customElements.define(CssGaugeComponent.is, CssGaugeComponent);
+declare global {
+    interface HTMLElementTagNameMap {
+        'node-projects-css-gauge': CssGaugeComponent;
+    }
+}

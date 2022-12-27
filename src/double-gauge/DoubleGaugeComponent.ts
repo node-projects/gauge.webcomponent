@@ -89,3 +89,8 @@ export class DoubleGaugeComponent extends BaseCustomWebComponentConstructorAppen
 }
 
 customElements.define(DoubleGaugeComponent.is, DoubleGaugeComponent);
+declare global {
+    interface HTMLElementTagNameMap {
+        'node-projects-double-gauge': DoubleGaugeComponent;
+    }
+}

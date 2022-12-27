@@ -194,3 +194,8 @@ export class MaterialGaugeComponent extends BaseCustomWebComponentConstructorApp
 }
 
 customElements.define(MaterialGaugeComponent.is, MaterialGaugeComponent);
+declare global {
+    interface HTMLElementTagNameMap {
+        'node-projects-material-gauge': MaterialGaugeComponent;
+    }
+  }
