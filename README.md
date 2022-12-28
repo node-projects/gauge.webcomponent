@@ -1,5 +1,7 @@
 # gauge.webcomponent
 
+[![Published on npm](https://img.shields.io/npm/v/@node-projects/gauge.webcomponent.svg?logo=npm)](https://www.npmjs.com/package/@node-projects/gauge.webcomponent)
+
 # description
 
 port of a few gauge components to webcomponents and typescript.
