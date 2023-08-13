@@ -213,7 +213,7 @@ export class Gauge extends BaseGauge {
 			//@ts-ignore
 			if (value.label !== undefined) {
 				// Draw labels depending on limitMin/Max
-				if ((!this.options.limitMin || (value >= this.minValue)) && (!this.options.limitMax || (value <= this.maxValue))) {
+				if ((!this.options.limitMin || (<number>value >= this.minValue)) && (!this.options.limitMax || (<number>value <= this.maxValue))) {
 					//@ts-ignore
 					font = value.font || staticLabels.font;
 					match = font.match(re)[0];
@@ -231,7 +231,7 @@ export class Gauge extends BaseGauge {
 
 			} else {
 				// Draw labels depending on limitMin/Max
-				if ((!this.options.limitMin || (value >= this.minValue)) && (!this.options.limitMax || (value <= this.maxValue))) {
+				if ((!this.options.limitMin || (<number>value >= this.minValue)) && (!this.options.limitMax || (<number>value <= this.maxValue))) {
 					//@ts-ignore
 					rotationAngle = this.getAngle(value) - ((3 * Math.PI) / 2);
 					this.ctx.rotate(rotationAngle);
