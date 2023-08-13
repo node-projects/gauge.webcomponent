@@ -21,13 +21,12 @@
   },
   "customElements": "custom-elements.json",
   "devDependencies": {
-    "typescript": "^4.9.4",
-    "es-module-shims": "^1.6.2",
-    "@web/dev-server": "^0.1.35",
-    "release-it": "^15.5.1"
+    "typescript": "^5.1.6",
+    "es-module-shims": "^1.8.0",
+    "@web/dev-server": "^0.3.0",
+    "release-it": "^16.1.4"
   },
   "dependencies": {
-    "@node-projects/base-custom-webcomponent": "^0.10.7",
-    "construct-style-sheets-polyfill": "^3.1.0"
+    "@node-projects/base-custom-webcomponent": "^0.13.0"
   }
 }
